@@ -59,4 +59,20 @@ Create migrations and sync DB
 
 (env) vagrant@ubuntu-bionic:/vagrant$ python manage.py migrate
 
+Setup Django Admin
+
+(env) vagrant@ubuntu-bionic:/vagrant$ python manage.py createsuperuser
+
+Add this lines of code:
+
+profiles_api\admin.py
+  from profile_api import models
+  admin.site.register(models.UserProfile)
+
+try out
+(env) vagrant@ubuntu-bionic:/vagrant$ python manage.py runserver 0.0.0.0:8000
+
+http://127.0.0.1:8000/admin/
+
+
 
