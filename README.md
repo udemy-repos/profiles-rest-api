@@ -41,3 +41,22 @@ INSTALLED_APPS = [
 Teste project
 
 (env) vagrant@ubuntu-bionic:/vagrant$ python manage.py runserver 0.0.0.0:8000
+
+Setup database
+profiles_api\models.py
+from django.contrib.auth.models import AbstractBaseUser
+from django.contrib.auth.models import PermissionsMixin
+
+... all code
+
+Set our custom use model
+
+profiles_project\settings.py
+AUTH_USER_MODEL = 'profiles_api.UserProfile'
+
+Create migrations and sync DB
+(env) vagrant@ubuntu-bionic:/vagrant$ python manage.py makemigrations profiles_api
+
+(env) vagrant@ubuntu-bionic:/vagrant$ python manage.py migrate
+
+
