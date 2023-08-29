@@ -33,9 +33,9 @@ profiles_project\settings.py
 Add those lines:
 
 INSTALLED_APPS = [
-    'rest_framework'
-    'rest_framework_authtoken',
-    'profile_api',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'profiles_api',
 ]
 
 Teste project
