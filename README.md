@@ -105,3 +105,24 @@ from profiles_api import views
 urlpatterns = [
     path('hello-view/', views.HelloApiView.as_view()),
 ]
+
+
+create a serializer
+
+New file:
+profiles_api\serializers.py
+
+from rest_framework import serializers
+
+
+class HelloSerializer(serializers.Serializer):
+    """Serializes a name field for testing out APIView"""
+    name = serializers.CharField(max_length=10)
+
+Add POST method to APIView
+
+profiles_api\views.py
+
+from profiles_api import Serializes
+
+
