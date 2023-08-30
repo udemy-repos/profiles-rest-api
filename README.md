@@ -74,5 +74,34 @@ try out
 
 http://127.0.0.1:8000/admin/
 
+API View
+
+Create first APIView
+
+profiles_api\views.py
+
+Configure View URL
+
+Add code
+profiles_project\urls.py
+
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('api/', include('profiles_api.urls'))
+]
+
+create a new file:
+profiles_api\urls.py
+
+Add this code:
+from django.urls import path
+
+from profiles_api import views
 
 
+urlpatterns = [
+    path('hello-view/', views.HelloApiView.as_view()),
+]
